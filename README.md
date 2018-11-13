@@ -1,6 +1,6 @@
 This is a javascript implementation of the [cookie_crimes tool](https://mango.pdf.zone/stealing-chrome-cookies-without-a-password) by @mangopdf
 
-Running the command below will run the javascript found in the *index.html* file of this repo which has been setup using Github Pages. It is currently harcoded to post the script output to my own loggly.com URL. Host it on your own github to control the script completely and enable GitHub pages in your repository settings to server the page as an HTML file.
+Running the command below will run the javascript found in the *index.html* file of this repo which has been setup using Github Pages. It is currently harcoded to post the script output to my own loggly.com URL. Host it on your own github to control the script completely and enable GitHub pages in your repository settings to serve the page as an HTML file.
 
 # Windows
 
