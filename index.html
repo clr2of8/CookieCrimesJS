@@ -38,8 +38,10 @@ request.onload = function() {
 	  xhttp.open("POST", post_url, true);
 	  xhttp.setRequestHeader('Content-Type', 'text/plain');
 	  xhttp.send(e.data);
-		
-	  window.close();
+
+	  xhttp.onload = function() {
+	    window.close();
+	  }
 	};
 }
 
