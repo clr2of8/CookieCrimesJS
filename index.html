@@ -40,7 +40,7 @@ request.onload = function() {
 	  xhttp.send(e.data);
 
           xhttp.onreadystatechange = function(){
-          	if(xhttp.readyState === 4 && xhttp.status === 200) connection.send('{"id": 1, "method": "Browser.close"}');; 
+          	if(xhttp.readyState === 4 && xhttp.status === 200) connection.send('{"id": 1, "method": "Page.close"}');; 
       	  };
 	};
 }
