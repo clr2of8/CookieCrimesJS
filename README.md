@@ -8,11 +8,11 @@ Thank you to @shellsterdude as well for the hints and tips he gave me as well as
 
 ## Windows 10
 
-## 64 Bit
+### 64 Bit
 
 ```"%PROGRAMFILES(X86)%\Google\Chrome\Application\chrome.exe" --headless --remote-debugging-port=9222 --disable-web-security --user-data-dir="%localAppData%/Google/Chrome/User Data" --disable-plugins https://clr2of8.github.io/TestCC/```
 
-## 32 Bit
+### 32 Bit
 
 ```"%PROGRAMFILES%\Google\Chrome\Application\chrome.exe" --headless --remote-debugging-port=9222 --disable-web-security --user-data-dir="%localAppData%/Google/Chrome/User Data" --disable-plugins https://clr2of8.github.io/TestCC/```
 
