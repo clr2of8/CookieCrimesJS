@@ -4,7 +4,13 @@ Running the command below will run the javascript found in the *index.html* file
 
 # Windows
 
+## Windows 10
+
 ```"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --headless --remote-debugging-port=9222 --disable-web-security --user-data-dir=%localAppData%"\Google\Chrome\User Data\Default" https://clr2of8.github.io/TestCC/```
+
+## Windows 7
+
+```%localAppData%"\Google\Chrome\Application\chrome.exe" --headless --remote-debugging-port=9222 --disable-web-security --user-data-dir=%localAppData%"\Google\Chrome\User Data\Default" https://clr2of8.github.io/TestCC/```
 
 # OS X
 
