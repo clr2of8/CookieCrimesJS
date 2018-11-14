@@ -6,12 +6,12 @@ Running the command below will run the javascript found in the *index.html* file
 
 ## Windows 10
 
-```"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --headless --remote-debugging-port=9222 --disable-web-security --user-data-dir=%localAppData%"\Google\Chrome\User Data\Default" https://clr2of8.github.io/TestCC/```
+```"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --headless --remote-debugging-port=9222 --disable-web-security --user-data-dir=%localAppData%"/Google/Chrome/User Data" --disable-plugins https://clr2of8.github.io/TestCC/```
 
 ## Windows 7
 
-```%localAppData%"\Google\Chrome\Application\chrome.exe" --headless --remote-debugging-port=9222 --disable-web-security --user-data-dir=%localAppData%"/Google/Chrome/User Data" https://clr2of8.github.io/TestCC/```
+```%localAppData%"\Google\Chrome\Application\chrome.exe" --headless --remote-debugging-port=9222 --disable-web-security --user-data-dir=%localAppData%"/Google/Chrome/User Data" --disable-plugins https://clr2of8.github.io/TestCC/```
 
 # OS X
 
-```"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --remote-debugging-port=9222 --disable-web-security --user-data-dir="$HOME/Library/Application Support/Google/Chrome" https://clr2of8.github.io/TestCC/```
+```"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --remote-debugging-port=9222 --disable-web-security --user-data-dir="$HOME/Library/Application Support/Google/Chrome" --disable-plugins https://clr2of8.github.io/TestCC/```
