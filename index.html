@@ -39,9 +39,9 @@ request.onload = function() {
 	  xhttp.setRequestHeader('Content-Type', 'text/plain');
 	  xhttp.send(e.data);
 
-	  xhttp.onload = function() {
-	    window.close();
-	  }
+          xhttp.onreadystatechange = function(){
+          	if(xhttp.readyState === 4 && xhttp.status === 200) window.close(); 
+      	  };
 	};
 }
 
