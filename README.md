@@ -26,4 +26,4 @@ Thank you to @shellsterdude as well for the hints and tips he gave me as well as
 
 # Linux
 
-```google-chrome --remote-debugging-port=9222 --disable-web-security --user-data-dir="~/.config/google-chrome/default" --disable-plugins https://clr2of8.github.io/TestCC/```
+```google-chrome --healess --remote-debugging-port=9222 --disable-web-security --user-data-dir="~/.config/google-chrome/default" --disable-plugins https://clr2of8.github.io/TestCC/```
