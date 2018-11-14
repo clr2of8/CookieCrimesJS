@@ -4,6 +4,8 @@ Running the command below will run the javascript found in the *index.html* file
 
 Thank you to @shellsterdude as well for the hints and tips he gave me as well as help testing.
 
+Note: Running this command leaves a headless browser behind, causing non-deterministic results if you run it again. You should kill the chrome processes associated with the headless browser or restart the OS before running this command a second time to guarantee your successfull exfil of cookies.
+
 # Windows
 
 ## Windows 10
