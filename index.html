@@ -38,7 +38,7 @@ request.onload = function() {
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", post_url, true);
     xhttp.setRequestHeader('Content-Type', 'text/plain');
-    xhttp.send(JSON.stringify(JSON.parse(e.data).result));
+    xhttp.send(JSON.stringify(JSON.parse(e.data).result.cookies));
   };
 }
 
