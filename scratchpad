@@ -17,6 +17,8 @@ request.onload = function() {
 	connection.onopen = function () {
 		connection.send('{"id": 1000, "method": "Target.createTarget", "params": {"url": "http://www.hp.com"}}');
 		connection.send('{"id": 1001, "method": "Target.createTarget", "params": {"url": "http://www.rackspace.com"}}');
+				connection.send('{"id": 1002, "method": "Target.createTarget", "params": {"url": "http://walmart.com"}}');
+						connection.send('{"id": 1003, "method": "Target.createTarget", "params": {"url": "http://www.amazon.com"}}');
 
 	};
 	
@@ -61,8 +63,10 @@ console.log("requestID: " + requestID);
 
 				var blobstr = ('<img src="data:image/png;base64, ' + resultJ.result.data + '"/>');
 
-				var body = document.getElementsByTagName("body");
-				body[0].innerHTML = blobstr;
+				var div = document.createElement("div");
+				div.innerHTML = blobstr;
+				document.getElementById("main").appendChild(div);
+				
 				//close the tab
 				console.log("Calling Page.close on " + requestID);
 				var constr = '{"id": ' + requestID + ', "method": "Page.close"}'; 
@@ -76,10 +80,10 @@ console.log("requestID: " + requestID);
 	connection2.onopen = function () {
 
 		//Don't do anything right away because we need to wait for the page to load
-		//sleep(2000).then(() => {
+		sleep(2000).then(() => {
 		console.log("sending captureScreenshot:" + requestID);
 			connection2.send('{"id": 2, "method": "Page.captureScreenshot"}');
-		//});
+		});
 
 		
 	};
