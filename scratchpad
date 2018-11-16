@@ -1,0 +1,94 @@
+var webSocketDebuggerUrl;
+var port = 9222;
+var result;
+var targetID;
+var connection;
+var request = new XMLHttpRequest();
+request.open("GET", "http://localhost:" + port + "/json");
+request.responseType = 'json';
+request.send();
+request.onload = function() {
+	webSocketDebuggerUrl = request.response[0].webSocketDebuggerUrl;
+	console.log(webSocketDebuggerUrl);
+ 
+	connection = new WebSocket(webSocketDebuggerUrl);
+	
+	// When the connection is open, send some data to the server
+	connection.onopen = function () {
+		connection.send('{"id": 1000, "method": "Target.createTarget", "params": {"url": "http://www.hp.com"}}');
+		connection.send('{"id": 1001, "method": "Target.createTarget", "params": {"url": "http://www.rackspace.com"}}');
+
+	};
+	
+	// Log errors
+	connection.onerror = function (error) {
+	  console.log('WebSocket Error ' + error);
+	};
+	
+	// Log messages from the server
+	connection.onmessage = function (e) {
+	console.log("xxxxxxxxxxxxxxxxxxxxxxx" + e.data);
+		//find the targetID
+		var respJ = JSON.parse(e.data);
+		if (respJ.result.targetId != undefined){
+			targetID = respJ.result.targetId;
+		    getScreenshot(targetID, respJ.id).then(() => {console.log("booya")});
+		}
+	};	
+}
+
+function getScreenshot (targetID, requestID) {
+ return new Promise(function(resolve, reject) {
+console.log("requestID: " + requestID);
+	var connection2 = new WebSocket("ws://localhost:9222/devtools/page/" + targetID);
+	console.log(connection2);
+	
+
+
+	// Log errors
+	connection2.onerror = function (error) {
+		console.log('WebSocket Error ' + error);
+	};
+	
+	// Log messages from the server
+	connection2.onmessage = function (e) {
+		if (e.data != undefined) {
+
+			resultJ = JSON.parse(e.data);
+
+
+			if ((resultJ.id != undefined) && (resultJ.id == 2)) {
+
+				var blobstr = ('<img src="data:image/png;base64, ' + resultJ.result.data + '"/>');
+
+				var body = document.getElementsByTagName("body");
+				body[0].innerHTML = blobstr;
+				//close the tab
+				console.log("Calling Page.close on " + requestID);
+				var constr = '{"id": ' + requestID + ', "method": "Page.close"}'; 
+				connection2.send(constr);
+				resolve("it worked");
+			}
+		}
+	};
+	
+	//When the connection is open, send some data to the server
+	connection2.onopen = function () {
+
+		//Don't do anything right away because we need to wait for the page to load
+		//sleep(2000).then(() => {
+		console.log("sending captureScreenshot:" + requestID);
+			connection2.send('{"id": 2, "method": "Page.captureScreenshot"}');
+		//});
+
+		
+	};
+  });
+}
+
+// sleep time expects milliseconds
+function sleep (time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
+
+
