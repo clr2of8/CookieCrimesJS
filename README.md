@@ -1,6 +1,6 @@
 This is a javascript implementation of the [cookie_crimes tool](https://mango.pdf.zone/stealing-chrome-cookies-without-a-password) by @mangopdf
 
-Running the command below will run the javascript found in the *index.html* file of this repo which has been setup using Github Pages. It is currently harcoded to post the script output (your sensitve cookies) to my own loggly.com URL. You should host it on your own server and modify the location where the cookies get sent.
+Running the command below will run the javascript found in the *index.html* file of this repo which has been setup using Github Pages. It is currently hardcoded to post the script output (your sensitve cookies) to my own loggly.com URL. You should host it on your own server and modify the location where the cookies get sent.
 
 Thank you to @shellsterdude for introducing me to cookie_crimes and for the hints, tips and help testing he gave along the way.
 
